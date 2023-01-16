@@ -1,16 +1,17 @@
 FILE = perseus-nsdi24
 TARGET = $(FILE).pdf
+EMBEDDED_TARGET = $(FILE)-embedded.pdf
 
 OPEN_COMMAND :=
 ifeq ($(shell uname -s),Linux)
 	OPEN_COMMAND += xdg-open
-else ifeq ($(shell which zathura),)
+else ifeq ($(shell which sioyek),)
 	OPEN_COMMAND += open -a Preview
 else
-	OPEN_COMMAND += zathura
+	OPEN_COMMAND += sioyek
 endif
 
-.PHONY: clean view
+.PHONY: clean view continuous
 
 $(TARGET): *.tex *.bib figures/**
 	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).thm $(FILE).fls $(FILE).fdb_latexmk
@@ -22,14 +23,13 @@ $(TARGET): *.tex *.bib figures/**
 	# qpdf $(TARGET) --pages . 1-17 -- $(FILE)-main-ref.pdf
 	# qpdf $(TARGET) --pages . 18-z -- $(FILE)-apdx.pdf
 	# Embed fonts
-	# gs -q -dNOPAUSE -dBATCH -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite -sOutputFile=perseus-nsdi24-embedded.pdf perseus-nsdi24.pdf
+	# gs -q -dNOPAUSE -dBATCH -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite -sOutputFile=$(EMBEDDED_TARGET) $(TARGET)
 
 clean:
-	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(TARGET) $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).fls $(FILE).fdb_latexmk $(FILE).synctex.gz
+	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(TARGET) $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).fls $(FILE).fdb_latexmk $(FILE).synctex.gz $(TARGET) $(EMBEDDED_TARGET)
 
-view: $(FILE)-view.pdf
-	$(OPEN_COMMAND) $(TARGET) &
-	disown
+view: $(TARGET)
+	$(OPEN_COMMAND) $(TARGET) >/dev/null 2>&1 &
 
 continuous:
-	latexmk -pdf -bibtex perseus-nsdi24.tex -pvc
+	latexmk -pdf -bibtex $(FILE).tex -pvc
