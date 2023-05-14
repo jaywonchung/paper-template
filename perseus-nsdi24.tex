@@ -2,25 +2,29 @@
 \usepackage{usenix-2020-09}
 
 \usepackage{times}
-\usepackage{amsmath,amsthm}
+\usepackage{amsmath,amsthm,amsfonts}
 \usepackage{xspace}
 \usepackage{graphicx}
 \DeclareMathOperator*{\argmin}{argmin}
-
+\DeclareMathOperator*{\argmax}{argmax}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
 
 % Algorithm style
 \definecolor{commentgreen}{rgb}{0, 0.5, 0}
-\usepackage[linesnumbered, ]{algorithm2e}
-\usepackage{float}
-%\usepackage{algorithmicx}
+\usepackage[
+  vlined,
+  linesnumbered,
+]{algorithm2e}
+\DontPrintSemicolon{}
+\SetKwComment{Comment}{$\triangleright$\ }{}
 \newcommand\mycommfont[1]{\small\textcolor{commentgreen}{\textrm{#1}}}
 \SetCommentSty{mycommfont}
-\setlength{\interspacetitleruled}{0pt}%
-\setlength{\algotitleheightrule}{0pt}%
-\newcommand{\algcomment}[1]{{\footnotesize\Comment{#1}}}
 \newcommand{\algrule}[1][.7pt]{\par\vskip.5\baselineskip\hrule height #1\par\vskip.5\baselineskip}
+\let\oldnl\nl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
 
-
+\usepackage{float}
 \usepackage[english]{babel}
 \usepackage{subfig}
 \usepackage{xcolor}
@@ -34,25 +38,32 @@
 \usepackage[normalem]{ulem}
 \usepackage{authblk}
 \usepackage{comment}
+\usepackage{booktabs}
 
 % User defined commands
-\def\name{Perseus\xspace}
+% \def\name{Perseus\xspace}
 
 % \newcommand{\revised}[1]{#1}
 \newcommand{\revised}[1]{\textcolor{blue}{#1}}
 \newcommand{\todo}[1]{\textcolor{red}{\{#1\}}}
-% \renewcommand{\mosharaf}[1]{}
-\newcommand{\mosharaf}[1]{\textcolor{blue}{\{MC: #1\}}}
-% \renewcommand{\jw}[1]{}
-\newcommand{\jw}[1]{\textcolor[rgb]{0.25,0.65,0.1}{\{JW: #1\}}}
 \newcommand{\topic}[1]{\paragraph{\textit{#1}}}
 \newcommand{\suggest}[1]{\textcolor{blue}{\{#1\}}}
+\newcommand{\mosharaf}[1]{\textcolor{blue}{\{MC: #1\}}}
+\newcommand{\nikhil}[1]{\textcolor{teal}{\{NB: #1\}}}
+\newcommand{\jw}[1]{\textcolor[rgb]{0.25,0.65,0.1}{\{JW: #1\}}}
+\newcommand{\yile}[1]{\textcolor{orange}{\{YG: #1\}}}
+\renewcommand{\mosharaf}[1]{}
+\renewcommand{\jw}[1]{}
+\renewcommand{\yile}[1]{}
 
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=0pt] (char) {#1};}}
 \newcommand*\blackcircled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,fill=black,inner sep=0pt] (char) {\textcolor{white}{#1}};}}
+\newcommand*\greencircled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw=none,fill=commentgreen,inner sep=0pt] (char) {\textcolor{white}{#1}};}}
 
 % Same thanks, for equal contribution etc.
 \newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
@@ -172,7 +183,7 @@
 	\date{}
 	
 	% make title bold and 14 pt font (Latex default is non-bold, 16 pt)
-  \title{\Large \bf Paper Title}
+  \title{\Large \bf Paper: Title}
 
 	
 	% \author{
@@ -185,26 +196,27 @@
 	
 	\pagestyle{plain}
 	
-  \pagenumbering{gobble} %% Hides page numbers
+  % \pagenumbering{gobble} %% Hides page numbers
 	
 	\maketitle
 	
-	\input{secs/abstract}
+	\input{abstract}
 
   % In case of equal contribution
   % {\let\thefootnote\relax\footnote{{$^*$Equal contribution.}}}
   % \setcounter{footnote}{0}
 
-	\input{secs/introduction}
-	\input{secs/motivation}
-	\input{secs/overview}
-	\input{secs/design}
-	\input{secs/implementation}
-	\input{secs/evaluation}
-	\input{secs/discussion}
-	\input{secs/related}
-	\input{secs/conclusion}
-	\input{secs/acknowledgements}\label{EndOfPaper}
+	\input{introduction}
+	\input{motivation}
+	\input{overview}
+	\input{design}
+	\input{implementation}
+	\input{evaluation}
+	% \input{discussion}
+	\input{related}
+	\input{conclusion}
+	% \input{acknowledgements}
+  \label{EndOfPaper}
 	
 	%----- References --------------------------------------------------------------
 

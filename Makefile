@@ -20,13 +20,13 @@ $(TARGET): *.tex *.bib figures/**
 	pdflatex -synctex=1 $(FILE)
 	pdflatex -synctex=1 $(FILE)
 	# Split into maintext and appendices
-	# qpdf $(TARGET) --pages . 1-17 -- $(FILE)-main-ref.pdf
-	# qpdf $(TARGET) --pages . 18-z -- $(FILE)-apdx.pdf
+	qpdf $(TARGET) --pages . 1-15 -- $(FILE)-main.pdf
+	qpdf $(TARGET) --pages . 16-z -- $(FILE)-apdx.pdf
 	# Embed fonts
 	# gs -q -dNOPAUSE -dBATCH -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite -sOutputFile=$(EMBEDDED_TARGET) $(TARGET)
 
 clean:
-	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(TARGET) $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).fls $(FILE).fdb_latexmk $(FILE).synctex.gz $(TARGET) $(EMBEDDED_TARGET)
+	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(TARGET) $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).fls $(FILE).fdb_latexmk $(FILE).synctex.gz *.pdf
 
 view: $(TARGET)
 	$(OPEN_COMMAND) $(TARGET) >/dev/null 2>&1 &
