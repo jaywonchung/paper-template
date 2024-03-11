@@ -1,4 +1,4 @@
-FILE = perseus-nsdi24
+FILE = paper-venueXX
 TARGET = $(FILE).pdf
 EMBEDDED_TARGET = $(FILE)-embedded.pdf
 
