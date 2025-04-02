@@ -62,10 +62,6 @@
 \newcommand*\greencircled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw=none,fill=commentgreen,inner sep=0pt] (char) {\textcolor{white}{#1}};}}
 
-% Same thanks, for equal contribution etc.
-\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
-
-%\newcommand{\argmax}{\operatornamewithlimits{argmax}}
 
 % Math related
 \theoremstyle{definition}
@@ -92,19 +88,6 @@
 \setlength{\droptitle}{-1cm}
 \date{}
 
-%\definecolor{boxcolor}{gray}{0.9}
-%\newenvironment{colframe}{%
-	%	\begin{Sbox}
-		%		\begin{minipage}
-			%			{0.96\columnwidth}
-			%		}{%
-			%		\end{minipage}
-		%	\end{Sbox}
-	%	\begin{center}
-		%		\colorbox{boxcolor}{\TheSbox}
-		%	\end{center}
-	%}
-
 % Code block environment from listing (environment lstlisting)
 \usepackage{listings}
 \usepackage{courier}
@@ -121,35 +104,6 @@
 	captionpos=b,
 	keepspaces=true,
 }
-
-
-
-%\definecolor{codegreen}{rgb}{0,0.6,0}
-%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-%\definecolor{codepurple}{rgb}{0.58,0,0.82}
-%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-%\lstdefinestyle{codestyle}{
-	%	% backgroundcolor=\color{backcolour},
-	%	commentstyle=\color{codegreen},
-	%	keywordstyle=\color{black}\bfseries,
-	%	numberstyle=\color{codegray},
-	%	stringstyle=\color{codepurple},
-	%	basicstyle=\ttfamily\mdseries\scriptsize,
-	%	emph={selector,kuiper},
-	%	emphstyle={\color{magenta}\bfseries},
-	%	breakatwhitespace=false,
-	%	frame=bottomline,
-	%	breaklines=true,
-	%	captionpos=b,
-	%	keepspaces=true,
-	%	numbers=left,
-	%	numbersep=5pt,
-	%	showspaces=false,
-	%	showstringspaces=false,
-	%	showtabs=false,
-	%	tabsize=2
-	%}
-%\lstset{style=codestyle}
 
 \newenvironment{denseitemize}{
 	\begin{itemize}[topsep=2pt, partopsep=0pt, leftmargin=1.5em]
@@ -180,11 +134,11 @@
 	\date{}
 	
 	% make title bold and 14 pt font (Latex default is non-bold, 16 pt)
-  \title{\Large \bf Paper: Title}
+  \title{\Large \bf SystemX: Optimizing Execution with Application-Aware Resource Management}
 
 	
 	% \author{
-	% 	\rm Jie You$^*$ \qquad Jae-Won Chung$^*$ \qquad Mosharaf Chowdhury
+	% 	\rm Great Guy$^*$ \qquad Also Great$^*$ \qquad Mosharaf Chowdhury
 	% 	\\
 	% 	\itshape{University of Michigan}
 	% 	} % end author
@@ -197,22 +151,24 @@
 	
 	\maketitle
 	
-	\input{abstract}
-
   % In case of equal contribution
   % {\let\thefootnote\relax\footnote{{$^*$Equal contribution.}}}
   % \setcounter{footnote}{0}
 
-	\input{introduction}
-	\input{motivation}
-	\input{overview}
-	\input{design}
-	\input{implementation}
-	\input{evaluation}
-	% \input{discussion}
-	\input{related}
-	\input{conclusion}
-	% \input{acknowledgements}
+  \begin{abstract}
+	\input{sections/abstract}
+  \end{abstract}
+
+	\input{sections/introduction}
+	\input{sections/motivation}
+	\input{sections/overview}
+	\input{sections/design}
+	\input{sections/implementation}
+	\input{sections/evaluation}
+	% \input{sections/discussion}
+	\input{sections/related}
+	\input{sections/conclusion}
+	% \input{sections/acknowledgements}
   \label{EndOfPaper}
 	
 	%----- References --------------------------------------------------------------
@@ -226,7 +182,7 @@
 
 	%----- Appendices --------------------------------------------------------------
 
-	\input{appendices}
+	\input{sections/appendices}
 	
 \end{document}
 %-------------------------------------------------------------------------------

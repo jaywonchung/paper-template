@@ -1,0 +1,50 @@
+\section{Design}\label{sec:design}
+
+Most likely, you want to have some kind of math or theorem in the paper because it looks cool, complicated, and profound.\footnote{I'm not joking. By the way, \textbackslash{}footnote should come \emph{after} the punctuation.}
+
+\begin{equation}
+  \label{eq:design-optimization}
+  \begin{aligned}
+    \textrm{Time}(f)   & = \sum_{i \in C}{t_{i,\textrm{comp}}(f_i)} \\
+    \textrm{Energy}(f) & = \sum_{i \in C}{e_{i,\textrm{comp}}(f_i)} + \sum_{i \notin C}{e_{i,\textrm{comp}}(f_i)} \\
+  \end{aligned}
+\end{equation}
+where $f$ is a vector of GPU frequency selections for instructions $\forall i \in \mathcal{G}$ and $C$ is the set of critical operations.
+
+\begin{theorem}
+  Our problem is NP-hard.
+\end{theorem}
+\begin{proof}
+  Reduction from Knapsack. See Appendix~\ref{sec:appendix-np-hardness}.
+\end{proof}
+
+Then, you will also have algorithms.
+The paper should always have \emph{both} a text description of what you do and a corresponding algorithm, because some people only read the text whereas others only read the algorithm.
+
+\begin{algorithm}[t]
+  \algrule{}
+
+  \KwIn{DAG $\mathcal{G}$ of computations $i \in \mathcal{G}$\newline
+        Amount of time to reduce in one iteration $\tau$\newline
+        Iteration time with all max frequencies $T_{\min}$
+  }
+  \KwOut{Set of optimized schedules $\mathcal{S}$}
+
+  \algrule{}
+
+  \Comment{Begin with the minimum energy schedule}
+  $s \leftarrow$ Minimum energy for all computations\;\label{algoline:design-min-energy-plan}
+  $\mathcal{S} \leftarrow \{ s \}$\;
+
+  \While{$\mathrm{IterationTime}(\mathcal{G}, s) > T_{\min}$}{
+    \Comment{Reduce time by $\tau$ with minimal energy increase}
+    $s \leftarrow$ GetNextSchedule($\mathcal{G}$, $s$, $\tau$)\label{algoline:design-reducing-time-optimally}\;
+    $\mathcal{S} \leftarrow \mathcal{S} \cup \{ s \}$ \;
+  }
+
+  \Return{$\mathcal{S}$}
+
+  \algrule{}
+
+  \caption{Iteratively crawling up the frontier.}\label{algo:design-overview}
+\end{algorithm}

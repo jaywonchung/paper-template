@@ -7,7 +7,7 @@ bin/
 *.class
 .metadata/
 .recommenders/
-*.pdf
+/*.pdf
 *.blg
 *.aux
 *.log

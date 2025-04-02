@@ -1,6 +1,7 @@
-FILE = paper-venueXX
+FILE = paper-osdi17
 TARGET = $(FILE).pdf
 EMBEDDED_TARGET = $(FILE)-embedded.pdf
+FIGS := $(shell find figures -type f -name '*.pdf')
 
 OPEN_COMMAND :=
 ifeq ($(shell uname -s),Linux)
@@ -13,7 +14,7 @@ endif
 
 .PHONY: clean view continuous
 
-$(TARGET): *.tex *.bib figures/**
+$(TARGET): *.tex sections/*.tex *.bib $(FIGS)
 	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).thm $(FILE).fls $(FILE).fdb_latexmk
 	pdflatex -synctex=1 $(FILE)
 	bibtex $(FILE)

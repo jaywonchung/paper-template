@@ -81,8 +81,36 @@ numpages = {10}
 	howpublished = {\url{https://developer.nvidia.com/nvidia-system-management-interface}}
 }
 
+@misc{amdsmi,
+	title        = {{{AMD System Management Interface}}},
+	howpublished = {\url{https://rocm.docs.amd.com/projects/amdsmi/en/latest/}}
+}
 
+@misc{apple-netzero,
+  title = {Apple Environment},
+  howpublished = {https://www.apple.com/environment},
+}
 
+@misc{google-netzero,
+  title = {Google Sustainability},
+  howpublished = {https://sustainability.google},
+}
+
+@misc{meta-netzero,
+  title = {Meta Climate},
+  howpublished = {https://sustainability.fb.com/climate},
+}
+
+@misc{microsoft-netzero,
+  title = {Microsoft Sustainability},
+  howpublished = {https://www.microsoft.com/en-us/sustainability},
+}
+
+@misc{unep-report-2023,
+  title = {Emissions Gap Report 2023},
+  howpublished = {https://www.unep.org/resources/emissions-gap-report-2023},
+  author = {United Nations Environment Programme},
+}
 
 @article{deepspeech-arxiv14,
   title={Deep speech: Scaling up end-to-end speech recognition},
@@ -388,6 +416,24 @@ numpages = {10}
 	year={2020}
 }
 
+@inproceedings{colossalai-icpp23,
+author = {Li, Shenggui and Liu, Hongxin and Bian, Zhengda and Fang, Jiarui and Huang, Haichen and Liu, Yuliang and Wang, Boxiang and You, Yang},
+title = {Colossal-AI: A Unified Deep Learning System For Large-Scale Parallel Training},
+year = {2023},
+isbn = {9798400708435},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3605573.3605613},
+doi = {10.1145/3605573.3605613},
+abstract = {The success of Transformer models has pushed the deep learning model scale to billions of parameters, but the memory limitation of a single GPU has led to an urgent need for training on multi-GPU clusters. However, the best practice for choosing the optimal parallel strategy is still lacking, as it requires domain expertise in both deep learning and parallel computing. The Colossal-AI system addressed the above challenge by introducing a unified interface to scale your sequential code of model training to distributed environments. It supports parallel training methods such as data, pipeline, tensor, and sequence parallelism and is integrated with heterogeneous training and zero redundancy optimizer. Compared to the baseline system, Colossal-AI can achieve up to 2.76 times training speedup on large-scale models.},
+booktitle = {Proceedings of the 52nd International Conference on Parallel Processing},
+pages = {766–775},
+numpages = {10},
+keywords = {text tagging, neural networks, gaze detection, datasets},
+location = {<conf-loc>, <city>Salt Lake City</city>, <state>UT</state>, <country>USA</country>, </conf-loc>},
+series = {ICPP '23}
+}
+
 @article{rnn-hardware-survey,
 	title={A survey on hardware accelerators and optimization techniques for {RNNs}},
 	author={Mittal, Sparsh and Umesh, Sumanth},
@@ -583,20 +629,18 @@ numpages = {10}
 	year={2019}
 }
 
-@inproceedings{odpp,
+@inproceedings{odpp-ccgrid20,
   title={Indicator-directed dynamic power management for iterative workloads on {GPU}-accelerated systems},
   author={Zou, Pengfei and Li, Ang and Barker, Kevin and Ge, Rong},
-  booktitle={2020 20th IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing (CCGRID)},
+  booktitle={CCGRID},
   year={2020},
-  organization={IEEE}
 }
 
-@article{gpoeo,
+@article{gpoeo-tpds21,
   title={Dynamic {GPU} Energy Optimization for Machine Learning Training Workloads},
   author={Wang, Farui and Zhang, Weizhe and Lai, Shichao and Hao, Meng and Wang, Zheng},
   journal={IEEE Transactions on Parallel and Distributed Systems},
   year={2021},
-  publisher={IEEE}
 }
 
 @inproceedings{dvfs-impact,
@@ -1125,10 +1169,16 @@ year = {2022},
 @misc{softwarebloat-wikipedia,
    author={Wikipedia},
    title={Software bloat},
-   year={2023},
    howpublished={\url{http://en.wikipedia.org/w/index.php?title=Software\%20bloat&oldid=1138976904}},
    note={[Online; accessed 15-March-2023]}
  }
+
+@inproceedings{ugc-stoc02,
+  author = {Khot, Subhash},
+  title = {On the power of unique 2-prover 1-round games},
+  year = {2002},
+  booktitle = {STOC},
+}
 
 @inproceedings{dapple-ppopp21,
   author = {Fan, Shiqing and Rong, Yi and Meng, Chen and Cao, Zongyan and Wang, Siyu and Zheng, Zhen and Wu, Chuan and Long, Guoping and Yang, Jun and Xia, Lixue and Diao, Lansong and Liu, Xiaoyong and Lin, Wei},
@@ -1336,7 +1386,7 @@ year = {2022},
   eprint={arXiv preprint arXiv:2303.02508},
 }
 
-@article{depo,
+@article{depo-future23,
   title = {Dynamic {GPU} power capping with online performance tracing for energy efficient {GPU} computing using {DEPO} tool},
   journal = {Future Generation Computer Systems},
   volume = {145},
@@ -1418,4 +1468,537 @@ year = {2022},
   title = {Improving Resource Utilization by Timely {Fine-Grained} Scheduling},
   year = {2020},
   booktitle = {EuroSys},
+}
+
+@inproceedings{stochasticparrot-facct21,
+  author = {Bender, Emily M. and Gebru, Timnit and McMillan-Major, Angelina and Shmitchell, Shmargaret},
+  title = {On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?},
+  year = {2021},
+  booktitle = {Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT '21)},
+}
+
+@inproceedings{envpipe-atc23,
+  author = {Sangjin Choi and Inhoe Koo and Jeongseob Ahn and Myeongjae Jeon and Youngjin Kwon},
+  title = {{EnvPipe}: Performance-preserving {DNN} Training Framework for Saving Energy},
+  year = {2023},
+  booktitle = {ATC},
+}
+
+@inproceedings{thunderbolt-osdi20,
+  author = {Shaohong Li and Xi Wang and Xiao Zhang and Vasileios Kontorinis and Sreekumar Kodakara and David Lo and Parthasarathy Ranganathan},
+  title = {Thunderbolt: {Throughput-Optimized}, {Quality-of-Service-Aware} Power Capping at Scale},
+  booktitle = {OSDI},
+  year = {2020},
+}
+
+@inproceedings{mvpp-asplos20,
+  author = {Sakalkar, Varun and Kontorinis, Vasileios and Landhuis, David and Li, Shaohong and De Ronde, Darren and Blooming, Thomas and Ramesh, Anand and Kennedy, James and Malone, Christopher and Clidaras, Jimmy and Ranganathan, Parthasarathy},
+  title = {Data Center Power Oversubscription with a Medium Voltage Power Plane and {Priority-Aware} Capping},
+  year = {2020},
+  booktitle = {ASPLOS},
+}
+
+@article{polca-asplos24,
+  author = {Patel, Pratyush and Choukse, Esha and Zhang, Chaojie and Goiri, \'{I}\~{n}igo and Warrier, Brijesh and Mahalingam, Nithish and Bianchini, Ricardo},
+  title = {Characterizing Power Management Opportunities for LLMs in the Cloud},
+  year = {2024},
+  booktitle = {ASPLOS},
+}
+
+@article{bloom-arxiv22,
+  title={{BLOOM}: A 176B-Parameter Open-Access Multilingual Language Model}, 
+  author={BigScience Workshop},
+  year={2023},
+  eprint={arXiv preprint arXiv:2211.05100},
+}
+
+@inproceedings{vitscalinglaws-cvpr22,
+  author={Zhai, Xiaohua and Kolesnikov, Alexander and Houlsby, Neil and Beyer, Lucas},
+  title= {Scaling Vision Transformers},
+  booktitle={CVPR},
+  year={2022},
+}
+
+@article{llama2-arxiv23,
+  title={Llama 2: Open Foundation and Fine-Tuned Chat Models},
+  author={GenAI, Meta},
+  year={2023},
+  eprint={arXiv preprint arXiv:2307.09288},
+}
+
+@misc{pytorch-stragglers,
+  title = {Straggler Mitigation On PyTorch DDP By Hierarchical SGD},
+  author = {Wang, Yi and Varma, Rohan},
+  howpublished = {https://pytorch.org/blog/straggler-mitigation},
+}
+
+
+@inproceedings{varuna-eurosys22,
+  author = {Athlur, Sanjith and Saran, Nitika and Sivathanu, Muthian and Ramjee, Ramachandran and Kwatra, Nipun},
+  title = {Varuna: Scalable, Low-Cost Training of Massive Deep Learning Models},
+  year = {2022},
+  booktitle = {EuroSys},
+}
+
+@inproceedings{bamboo-nsdi23,
+  author = {John Thorpe and Pengzhan Zhao and Jonathan Eyolfson and Yifan Qiao and Zhihao Jia and Minjia Zhang and Ravi Netravali and Guoqing Harry Xu},
+  title = {Bamboo: Making Preemptible Instances Resilient for Affordable Training of Large {DNNs}},
+  booktitle = {NSDI},
+  year = {2023},
+}
+
+@inproceedings{oobleck-sosp23,
+    author           = {Jang, Insu and Yang, Zhenning and Zhang, Zhen and Jin, Xin and Chowdhury, Mosharaf},
+    booktitle        = {SOSP},
+    title            = {Oobleck: Resilient Distributed Training of Large Models Using Pipeline Templates},
+    year             = {2023},
+}
+
+@inproceedings{recsys-dsi-isca22,
+  author = {Zhao, Mark and Agarwal, Niket and Basant, Aarti and Gedik, Bu\u{g}ra and Pan, Satadru and Ozdal, Mustafa and Komuravelli, Rakesh and Pan, Jerry and Bao, Tianshu and Lu, Haowei and Narayanan, Sundaram and Langman, Jack and Wilfong, Kevin and Rastogi, Harsha and Wu, Carole-Jean and Kozyrakis, Christos and Pol, Parik},
+  title = {Understanding Data Storage and Ingestion for Large-Scale Deep Recommendation Model Training: Industrial Product},
+  year = {2022},
+  booktitle = {ISCA},
+}
+
+@article{datastalls-vldb21,
+  author = {Mohan, Jayashree and Phanishayee, Amar and Raniwala, Ashish and Chidambaram, Vijay},
+  title = {Analyzing and Mitigating Data Stalls in DNN Training},
+  year = {2021},
+  publisher = {VLDB Endowment},
+  volume = {14},
+  number = {5},
+  month = {jan},
+  pages = {771–784},
+}
+
+@article{gpupower-cal23,
+  author  = {Patel, Pratyush and Gong, Zibo and Rizvi, Syeda and Choukse, Esha and Misra, Pulkit and Anderson, Thomas and Sriraman, Akshitha},
+  journal = {IEEE Computer Architecture Letters},
+  title   = {Towards Improved Power Management in Cloud GPUs},
+  year    = {2023},
+  volume  = {22},
+  number  = {2},
+  pages   = {141-144},
+  doi     = {10.1109/LCA.2023.3278652}
+}
+
+
+@article{A100powerthermal-energies21,
+  author         = {Špeťko, Matej and Vysocký, Ondřej and Jansík, Branislav and Říha, Lubomír},
+  title          = {{DGX-A100} Face to Face {DGX}-2 -- Performance, Power and Thermal Behavior Evaluation},
+  journal        = {Energies},
+  volume         = {14},
+  year           = {2021},
+  number         = {2},
+  article-number = {376},
+  url            = {https://www.mdpi.com/1996-1073/14/2/376},
+  issn           = {1996-1073},
+}
+
+@inproceedings{largescalefailures-sc17,
+  author = {Gupta, Saurabh and Patel, Tirthak and Engelmann, Christian and Tiwari, Devesh},
+  title = {Failures in Large Scale Systems: Long-Term Measurement, Analysis, and Implications},
+  year = {2017},
+  booktitle = {SC},
+}
+
+@inproceedings{philly-atc19,
+  author = {Myeongjae Jeon and Shivaram Venkataraman and Amar Phanishayee and Junjie Qian and Wencong Xiao and Fan Yang},
+  title = {Analysis of {Large-Scale} {Multi-Tenant} {GPU} Clusters for {DNN} Training Workloads},
+  booktitle = {ATC},
+  year = {2019},
+}
+
+@InProceedings{dtct-approx-hardness,
+author="Svensson, Ola",
+editor="Gupta, Anupam
+and Jansen, Klaus
+and Rolim, Jos{\'e}
+and Servedio, Rocco",
+title="Hardness of Vertex Deletion and Project Scheduling",
+booktitle="Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques",
+year="2012",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="301--312",
+isbn="978-3-642-32512-0"
+}
+
+@misc{memorywall,
+  author = {Gholami, Amir and Yao, Zhewei and Kim, Sehoon and Mahoney, Michael and Keutzer, Kurt},
+  title = {{AI} and Memory Wall},
+  howpublished = {https://medium.com/riselab/ai-and-memory-wall-2cb4265cb0b8},
+}
+
+@misc{H100whitepaper,
+  author = {NVIDIA},
+  title = {NVIDIA {H100} Tensor Core {GPU} Architecture Overview},
+  howpublished = {https://resources.nvidia.com/en-us-tensor-core/gtc22-whitepaper-hopper},
+}
+
+@misc{blackwell-news,
+  author = {Tobias Mann},
+  title = {{NVIDIA} turns up the {AI} heat with 1,200W Blackwell GPUs},
+  howpublished = {https://www.theregister.com/2024/03/18/nvidia\_turns\_up\_the\_ai},
+}
+
+@misc{mlperf_training_31,
+  author = {ML COMMONS},
+  title = {{MLPerf} Training v3.1 benchmark results},
+  howpublished = {https://github.com/mlcommons/training\_results\_v3.1},
+}
+
+@inproceedings{efficientscaling_mlsys22,
+ author = {Park, Seo Jin and Fried, Joshua and Kim, Sunghyun and Alizadeh, Mohammad and Belay, Adam},
+ booktitle = {Proceedings of Machine Learning and Systems},
+ editor = {D. Marculescu and Y. Chi and C. Wu},
+ pages = {748--761},
+ title = {Efficient Strong Scaling Through Burst Parallel Training},
+ url = {https://proceedings.mlsys.org/paper_files/paper/2022/file/b99e69074b2fa1d8c8fe0d5b60e19397-Paper.pdf},
+ volume = {4},
+ year = {2022}
+}
+
+
+@INPROCEEDINGS{zero_sc20,
+  author={Rajbhandari, Samyam and Rasley, Jeff and Ruwase, Olatunji and He, Yuxiong},
+  booktitle={SC20: International Conference for High Performance Computing, Networking, Storage and Analysis}, 
+  title={ZeRO: Memory optimizations Toward Training Trillion Parameter Models}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={1-16},
+  doi={10.1109/SC41405.2020.00024}
+}
+
+@misc{pytorchfsdp_arxiv,
+  title={PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel}, 
+  author={Yanli Zhao and Andrew Gu and Rohan Varma and Liang Luo and Chien-Chin Huang and Min Xu and Less Wright and Hamid Shojanazeri and Myle Ott and Sam Shleifer and Alban Desmaison and Can Balioglu and Pritam Damania and Bernard Nguyen and Geeta Chauhan and Yuchen Hao and Ajit Mathews and Shen Li},
+  year={2023},
+  eprint={arXiv preprint arXiv:2304.11277},
+}
+
+@misc{pytorchlightning,
+  author = {Lightning-AI},
+  title = {Pytorch Lightning},
+  howpublished = {https://lightning.ai/pytorch-lightning},
+}
+
+@misc{mosaicml,
+  author = {MosaicML},
+  title = {MosaicML Training},
+  howpublished = {https://www.mosaicml.com/training}}
+
+@misc{gspmd_arxiv2021,
+  title={GSPMD: General and Scalable Parallelization for ML Computation Graphs}, 
+  author={Yuanzhong Xu and HyoukJoong Lee and Dehao Chen and Blake Hechtman and Yanping Huang and Rahul Joshi and Maxim Krikun and Dmitry Lepikhin and Andy Ly and Marcello Maggioni and Ruoming Pang and Noam Shazeer and Shibo Wang and Tao Wang and Yonghui Wu and Zhifeng Chen},
+  year={2021},
+  eprint={arXiv preprint arXiv:2105.04663},
+}
+
+@inproceedings{spmd_socc22,
+  author = {Zhang, Shiwei and Diao, Lansong and Wu, Chuan and Wang, Siyu and Lin, Wei},
+  title = {Accelerating Large-Scale Distributed Neural Network Training with SPMD Parallelism},
+  year = {2022},
+  booktitle = {SoCC},
+}
+
+@inproceedings{mantri-osdi10,
+  author = {Ganesh Ananthanarayanan and Srikanth Kandula and Albert Greenberg and Ion Stoica and Yi Lu and Bikas Saha and Edward Harris},
+  title = {Reining in the Outliers in {Map-Reduce} Clusters using Mantri},
+  booktitle = {OSDI},
+  year = {2010},
+}
+
+@inproceedings{megascale-nsdi24,
+  author = {Ziheng Jiang and Haibin Lin and Yinmin Zhong and Qi Huang and Yangrui Chen and Zhi Zhang and Yanghua Peng and Xiang Li and Cong Xie and Shibiao Nong and Yulu Jia and Sun He and Hongmin Chen and Zhihao Bai and Qi Hou and Shipeng Yan and Ding Zhou and Yiyao Sheng and Zhuo Jiang and Haohan Xu and Haoran Wei and Zhang Zhang and Pengfei Nie and Leqi Zou and Sida Zhao and Liang Xiang and Zherui Liu and Zhe Li and Xiaoying Jia and Jianxi Ye and Xin Jin and Xin Liu},
+  title = {{MegaScale}: Scaling Large Language Model Training to More Than 10,000 {GPUs}},
+  booktitle = {NSDI},
+  year = {2024},
+}
+
+@misc{hamilton2024constraint,
+  title = {Constraint-Driven Innovation ({CIDR} 2024 keynote talk)},
+  author = {James Hamilton},
+  howpublished = {\url{https://mvdirona.com/jrh/talksandpapers/JamesHamiltonCIDR2024.pdf}},
+}
+
+@misc{cbre2023,
+  title = {Global Data Center Trends 2023},
+  author = {{CBRE}},
+  year = {2023},
+  howpublished = {\url{https://www.cbre.com/insights/reports/global-data-center-trends-2023}},
+}
+
+@misc{cbre2024,
+  title = {Global Data Center Trends 2024},
+  author = {{CBRE}},
+  year = {2024},
+  howpublished = {\url{https://www.cbre.com/insights/reports/global-data-center-trends-2024}},
+}
+
+@misc{mckinsey2023,
+  title = {Investing in the Rising Data Center Economy},
+  author = {{McKinsey \& Company}},
+  year = {2023},
+  howpublished = {\url{https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/investing-in-the-rising-data-center-economy#/}},
+}
+
+@article{eyeriss-jssc16,
+  author={Chen, Yu-Hsin and Krishna, Tushar and Emer, Joel S. and Sze, Vivienne},
+  journal={IEEE Journal of Solid-State Circuits}, 
+  title={Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks}, 
+  year={2017},
+  volume={52},
+  number={1},
+  pages={127-138},
+}
+
+@article{vivienne17efficient,
+  author={Sze, Vivienne and Chen, Yu-Hsin and Yang, Tien-Ju and Emer, Joel S.},
+  journal={Proceedings of the IEEE}, 
+  title={Efficient Processing of Deep Neural Networks: A Tutorial and Survey}, 
+  year={2017},
+  volume={105},
+  number={12},
+  pages={2295-2329},
+}
+
+@inproceedings{eden-micro19,
+  author = {Koppula, Skanda and Orosa, Lois and Ya\u{g}l\i{}k\c{c}\i{}, A. Giray and Azizi, Roknoddin and Shahroodi, Taha and Kanellopoulos, Konstantinos and Mutlu, Onur},
+  title = {{EDEN}: Enabling Energy-Efficient, High-Performance Deep Neural Network Inference Using Approximate {DRAM}},
+  year = {2019},
+  booktitle = {MICRO},
+}
+
+@inproceedings{puma-asplos19,
+  author = {Ankit, Aayush and Hajj, Izzat El and Chalamalasetti, Sai Rahul and Ndu, Geoffrey and Foltin, Martin and Williams, R. Stanley and Faraboschi, Paolo and Hwu, Wen-mei W and Strachan, John Paul and Roy, Kaushik and Milojicic, Dejan S.},
+  title = {{PUMA}: A Programmable Ultra-efficient Memristor-based Accelerator for Machine Learning Inference},
+  year = {2019},
+  booktitle = {ASPLOS},
+}
+
+@inproceedings{snafu-isca21,
+  author={Gobieski, Graham and Atli, Ahmet Oguz and Mai, Kenneth and Lucia, Brandon and Beckmann, Nathan},
+  booktitle={ISCA}, 
+  title={{SNAFU}: An Ultra-Low-Power, Energy-Minimal {CGRA}-Generation Framework and Architecture}, 
+  year={2021},
+  pages={1027-1040},
+}
+
+@inproceedings{riptide-micro22,
+  author={Gobieski, Graham and Ghosh, Souradip and Heule, Marijn and Mowry, Todd and Nowatzki, Tony and Beckmann, Nathan and Lucia, Brandon},
+  booktitle={MICRO}, 
+  title={{RipTide}: A Programmable, Energy-Minimal Dataflow Compiler and Architecture}, 
+  year={2022},
+}
+
+@inproceedings{motionplanning-isca23,
+  author = {Shah, Deval and Yang, Ningfeng and Aamodt, Tor M.},
+  title = {Energy-Efficient Realtime Motion Planning},
+  year = {2023},
+  booktitle = {ISCA},
+}
+
+@article{kws-jssc24,
+  author       = {Heejin Yang and Ji{-}Hwan Seol and Rohit Rothe and Zichen Fan and Qirui Zhang and Hun{-}Seok Kim and David T. Blaauw and Dennis Sylvester},
+  title        = {A 1.5-{$\mu$W} Fully-Integrated Keyword Spotting SoC in 28-nm {CMOS} With Skip-RNN and Fast-Settling Analog Frontend for Adaptive Frame Skipping},
+  journal      = {{IEEE} J. Solid State Circuits},
+  volume       = {59},
+  number       = {1},
+  pages        = {29--39},
+  year         = {2024},
+}
+
+@inproceedings{enemy-hpca23,
+  author={Yu, Junyeol and Kim, Jongseok and Seo, Euiseong},
+  booktitle={HPCA}, 
+  title={Know Your Enemy To Save Cloud Energy: Energy-Performance Characterization of Machine Learning Serving}, 
+  year={2023},
+}
+
+@article{falcon-arxiv23,
+  title={The falcon series of open language models},
+  author={Almazrouei, Ebtesam and Alobeidli, Hamza and Alshamsi, Abdulaziz and Cappelli, Alessandro and Cojocaru, Ruxandra and Debbah, M{\'e}rouane and Goffinet, {\'E}tienne and Hesslow, Daniel and Launay, Julien and Malartic, Quentin and others},
+  journal={arXiv preprint arXiv:2311.16867},
+  year={2023}
+}
+
+@article{gemma-arxiv24,
+  title={Gemma: Open models based on {Gemini} research and technology},
+  author={Team, Gemma and Mesnard, Thomas and Hardin, Cassidy and Dadashi, Robert and Bhupatiraju, Surya and Pathak, Shreya and Sifre, Laurent and Rivi{\`e}re, Morgane and Kale, Mihir Sanjay and Love, Juliette and others},
+  journal={arXiv preprint arXiv:2403.08295},
+  year={2024}
+}
+
+@inproceedings{swarm-icml23,
+  author = {Ryabinin, Max and Dettmers, Tim and Diskin, Michael and Borzunov, Alexander},
+  title = {{SWARM} parallelism: training large models can be surprisingly communication-efficient},
+  year = {2023},
+  booktitle = {ICML},
+}
+
+@software{gpt-neox-github,
+  title = {{GPT-NeoX: Large Scale Autoregressive Language Modeling in PyTorch}},
+  author = {Andonian, Alex and Anthony, Quentin and Biderman, Stella and Black, Sid and Gali, Preetham and Gao, Leo and Hallahan, Eric and Levy-Kramer, Josh and Leahy, Connor and Nestler, Lucas and Parker, Kip and Pieler, Michael and Phang, Jason and Purohit, Shivanshu and Schoelkopf, Hailey and Stander, Dashiell and Songz, Tri and Tigges, Curt and Thérien, Benjamin and Wang, Phil and Weinbach, Samuel},
+  url = {https://www.github.com/eleutherai/gpt-neox},
+  doi = {10.5281/zenodo.5879544},
+  month = {9},
+  year = {2023},
+  version = {2.0.0},
+}
+
+@inproceedings{svensson2012hardness,
+  title={Hardness of vertex deletion and project scheduling},
+  author={Svensson, Ola},
+  booktitle={International Workshop on Approximation Algorithms for Combinatorial Optimization},
+  pages={301--312},
+  year={2012},
+  organization={Springer}
+}
+
+@inproceedings{tpuv4-nsdi24,
+  author = {Yazhou Zu and Alireza Ghaffarkhah and Hoang-Vu Dang and Brian Towles and Steven Hand and Safeen Huda and Adekunle Bello and Alexander Kolbasov and Arash Rezaei and Dayou Du and Steve Lacy and Hang Wang and Aaron Wisner and Chris Lewis and Henri Bahini},
+  title = {Resiliency at Scale: Managing {Google's} {TPUv4} Machine Learning Supercomputer},
+  booktitle = {NSDI},
+  year = {2024},
+}
+
+@misc{llama3-blog,
+  title = {Introducing {Meta} {Llama} 3: The most capable openly available {LLM} to date},
+  author = {{Meta AI}},
+  howpublished = {\url{https://ai.meta.com/blog/meta-llama-3/}},
+}
+
+@inproceedings{clockwork-osdi20,
+  author = {Arpan Gujarati and Reza Karimi and Safya Alzayat and Wei Hao and Antoine Kaufmann and Ymir Vigfusson and Jonathan Mace},
+  title = {Serving {DNNs} like Clockwork: Performance Predictability from the Bottom Up},
+  booktitle = {OSDI},
+  year = {2020},
+}
+
+@inproceedings{antdt-icde24,
+  author = {Y. Xiao and L. Ju and Z. Zhou and S. Li and Z. Huan and D. Zhang and R. Jiang and L. Wang and X. Zhang and L. Liang and J. Zhou},
+  booktitle = {ICDE},
+  title = {AntDT: A Self-Adaptive Distributed Training Framework for Leader and Straggler Nodes},
+  year = {2024},
+}
+
+@inproceedings{nnscaler-osdi24,
+author = {Zhiqi Lin and Youshan Miao and Quanlu Zhang and Fan Yang and Yi Zhu and Cheng Li and Saeed Maleki and Xu Cao and Ning Shang and Yilei Yang and Weijiang Xu and Mao Yang and Lintao Zhang and Lidong Zhou},
+title = {{nnScaler}: {Constraint-Guided} Parallelization Plan Generation for Deep Learning Training},
+booktitle = {OSDI},
+year = {2024},
+}
+
+@inproceedings{mapreduce-dvfs-igcc11,
+  author={Wirtz, Thomas and Ge, Rong},
+  booktitle={International Green Computing Conference and Workshops}, 
+  title={Improving {MapReduce} energy efficiency for computation intensive workloads}, 
+  year={2011},
+}
+
+@article{hadoop-dvfs-fgcs16,
+  title = {Governing energy consumption in Hadoop through CPU frequency scaling: An analysis},
+  journal = {Future Generation Computer Systems},
+  volume = {54},
+  pages = {219-232},
+  year = {2016},
+  issn = {0167-739X},
+  author = {Shadi Ibrahim and Tien-Dat Phan and Alexandra Carpen-Amarie and Houssem-Eddine Chihoub and Diana Moise and Gabriel Antoniu},
+}
+
+
+@inproceedings{express-icac17,
+  author={Maroulis, Stathis and Zacheilas, Nikos and Kalogeraki, Vana},
+  booktitle={ICAC}, 
+  title={{ExpREsS}: EneRgy Efficient Scheduling of Mixed Stream and Batch Processing Workloads}, 
+  year={2017},
+}
+
+@Article{hadoop-dvfs-js17,
+  author={Cai, Xiaojun and Li, Feng and Li, Ping and Ju, Lei and Jia, Zhiping},
+  title={SLA-aware energy-efficient scheduling scheme for Hadoop YARN},
+  journal={The Journal of Supercomputing},
+  year={2017},
+  month={Aug},
+  day={01},
+  volume={73},
+  number={8},
+  pages={3526-3546},
+}
+
+@article{spark-dvfs-js21,
+  author={Li, Hongjian and Wei, Yaojun and Xiong, Yu and Ma, Enjie and Tian, Wenhong},
+  title={A frequency-aware and energy-saving strategy based on DVFS for Spark},
+  journal={The Journal of Supercomputing},
+  year={2021},
+  month={Oct},
+  day={01},
+  volume={77},
+  number={10},
+  pages={11575-11596},
+}
+
+@article{aienergy-joule24,
+  author    = {Eric Masanet and Nuoa Lei and Jonathan Koomey},
+  title     = {To better understand AI’s growing energy use, analysts need a data revolution},
+  journal   = {Joule},
+  year      = {2024},
+}
+
+@inproceedings{dvfs-boosting-asplos24,
+  author = {Piga, Leonardo and Narayanan, Iyswarya and Sundarrajan, Aditya and Skach, Matt and Deng, Qingyuan and Maity, Biswadip and Chakkaravarthy, Manoj and Huang, Alison and Dhanotia, Abhishek and Malani, Parth},
+  title = {Expanding Datacenter Capacity with DVFS Boosting: A safe and scalable deployment experience},
+  year = {2024},
+  booktitle = {ASPLOS},
+}
+
+@inproceedings{cofris-igsc23,
+  author = {Chow, Marcus and Wong, Daniel},
+  title = {{CoFRIS}: Coordinated Frequency and Resource Scaling for {GPU} Inference Servers},
+  year = {2024},
+  booktitle = {IGSC},
+}
+
+@inproceedings{datadriven-ccgrid20,
+  author={Ilager, Shashikant and Muralidhar, Rajeev and Rammohanrao, Kotagiri and Buyya, Rajkumar},
+  booktitle={CCGRID}, 
+  title={A Data-Driven Frequency Scaling Approach for Deadline-aware Energy Efficient Scheduling on Graphics Processing Units ({GPUs})}, 
+  year={2020},
+}
+
+@inproceedings{pipefisher-mlsys23,
+  author = {Osawa, Kazuki and Li, Shigang and Hoefler, Torsten},
+  booktitle = {MLSys},
+  title = {{PipeFisher}: Efficient Training of Large Language Models Using Pipelining and Fisher Information Matrices},
+  year = {2023}
+}
+
+@inproceedings{hydro-osdi23,
+  author = {Qinghao Hu and Zhisheng Ye and Meng Zhang and Qiaoling Chen and Peng Sun and Yonggang Wen and Tianwei Zhang},
+  title = {Hydro: {Surrogate-Based} Hyperparameter Tuning Service in Datacenters},
+  booktitle = {OSDI},
+  year = {2023},
+}
+
+@inproceedings{recycle-sosp24,
+  author = {Swapnil Gandhi and Mark Zhao and Athinagoras Skiadopoulos and Christos Kozyrakis},
+  title = {{ReCycle}: Pipeline Adaptation for the Resilient Distributed Training of Large {DNNs}},
+  booktitle = {SOSP},
+  year = {2024},
+}
+
+@misc{openai-keynote-hotchips24,
+  title = {Predictable Scaling and Infrastructure ({HotChips} 2024 keynote talk)},
+  author = {Trevor Cai},
+  note = {{OpenAI}},
+}
+
+@inproceedings{crosslayer-energy-eecs24,
+    author        = {Jae-Won Chung and Nishil Talati and Mosharaf Chowdhury},
+    booktitle     = {Energy-Efficient Computing for Science Workshop},
+    title         = {Toward Cross-Layer Energy Optimizations in {AI} Systems},
+    year          = {2024},
 }
