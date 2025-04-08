@@ -3,7 +3,7 @@ TARGET = $(FILE).pdf
 EMBEDDED_TARGET = $(FILE)-embedded.pdf
 FIGS := $(shell find figures -type f -name '*.pdf')
 
-.PHONY: clean view continuous
+.PHONY: clean
 
 $(TARGET): *.tex sections/*.tex *.bib $(FIGS)
 	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).thm $(FILE).fls $(FILE).fdb_latexmk
