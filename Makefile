@@ -3,15 +3,6 @@ TARGET = $(FILE).pdf
 EMBEDDED_TARGET = $(FILE)-embedded.pdf
 FIGS := $(shell find figures -type f -name '*.pdf')
 
-OPEN_COMMAND :=
-ifeq ($(shell uname -s),Linux)
-	OPEN_COMMAND += xdg-open
-else ifeq ($(shell which sioyek),)
-	OPEN_COMMAND += open -a Preview
-else
-	OPEN_COMMAND += sioyek
-endif
-
 .PHONY: clean view continuous
 
 $(TARGET): *.tex sections/*.tex *.bib $(FIGS)
@@ -28,9 +19,3 @@ $(TARGET): *.tex sections/*.tex *.bib $(FIGS)
 
 clean:
 	rm -f $(FILE).aux $(FILE).bbl $(FILE).blg $(FILE).log $(TARGET) $(FILE).dvi $(FILE).ps $(FILE).out $(FILE).fls $(FILE).fdb_latexmk $(FILE).synctex.gz *.pdf
-
-view: $(TARGET)
-	$(OPEN_COMMAND) $(TARGET) >/dev/null 2>&1 &
-
-continuous:
-	latexmk -pdf -bibtex $(FILE).tex -pvc
